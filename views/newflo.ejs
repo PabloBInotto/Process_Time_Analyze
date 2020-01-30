@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Login Register</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+ <style>
+  html{
+   padding:50px;
+  }
+ </style>
+</head>
+<body>
+ <div class="container">
+  <div class="page-header text-center">
+   <h1>New FLO Analysis</h1>
+  </div>
+
+  <div class="row">
+        
+        <div class="col-sm-12">
+            <div class="well">
+                <h3 style="margin: 10px;" ><span class="fa fa-bar-chart"></span> Theme registration</h3> 
+                <a  style="margin: 10px;"  href="/profile" class="btn btn-default btn-sm">Home</a>
+                
+                <form class="form-inline" style="margin: 10px;" action="/registrarnovotema"  enctype="multipart/form-data" method='post'>
+                    <div class="form-group">
+                      <label class="sr-only" for="theme">Modelo/processo analizado:</label> 
+                      <input type="text" class="form-control" id="theme" placeholder="Modelo/processo analizado..."  name="theme">
+                    </div>
+                    <div class="form-group">
+                      <label class="sr-only" for="file">Arquivo de video:</label>
+                      <input type="file" class="form-control" id="file" placeholder="video" name="video">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                  </form>
+                
+            </div>
+        </div>
+
+    </div>
+ </div>
+</body>
+</html>
