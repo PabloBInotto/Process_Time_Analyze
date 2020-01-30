@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Login Register</title>
+ <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <style>
+  html{
+   padding:50px;
+  }
+  thead, tbody { display: block; }
+
+tbody {
+    height: 80px;       /* Just for the demo          */
+    overflow-y: auto;    /* Trigger vertical scroll    */
+    overflow-x: hidden;  /* Hide the horizontal scroll */
+}
+ </style>
+</head>
+<body>
+ <div class="container">
+  <div class="page-header text-center">
+   <h1>My Dashboard</h1>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+            <div class="well" style="height: 200px;">
+                <h3><span class="fa fa-user"></span> Welcome <%= user.username %></h3>
+
+                <p>
+                <strong>id</strong> <%= user.id %>,
+                <strong> username</strong> <%= user.username %>,   
+                <a href="/logout" class="btn btn-danger btn-sm">Logout</a>
+                </p>
+            </div>
+        </div>
+    
+        <div class="col-sm-4">
+            <div class="well" style="height: 200px;">
+                <h3><span class="fa fa-bar-chart"></span> New FLO Analysis</h3>
+
+                <p>
+                Upload a movie and analyse,   
+                <a href="/new" class="btn btn-success btn-sm">Start New</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+                <div class="well" style="height: 200px;" >
+                    <h3><span class="fa fa-tasks"></span> Your analysis</h3>
+                    
+                            <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <th>Theme</th>
+                                        <th></th>
+                                      </tr>
+                                    </thead>
+                                        <tbody>
+                                    <% if (dados){ %>
+                                        <% for (var j = 0; j < dados.length; j++){ %>
+                                            <tr>
+                                                <td><%= dados[j].theme %></td>
+                                                <td> <a  href="/analysis?id=<%= dados[j].id %>" class="btn btn-default btn-sm">Analysze</a></td>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                        </tbody> 
+                            </table>
+                </div>
+        </div>
+
+    </div>
+ </div>
+</body>
+</html>
